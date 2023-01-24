@@ -1,0 +1,45 @@
+.TodolistPageWrapper{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 300px 1fr;
+    gap: 20px
+}
+
+.ListPicker{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.Lists{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 3;
+}
+
+.Calendar{
+    background-color: rgb(146, 212, 212);
+    width: 100%;
+    height: 100%;
+}
+
+.Filters{
+    background-color: rgb(16, 138, 219);
+    width: 100%;
+    height: 100%;
+}
+
+.PostSettings{
+    background-color: rgb(255, 0, 85);
+    width: 100%;
+    height: 100%;
+}
+
+.TodoPosts{
+    background-color: blueviolet;
+    width: 100%;
+    height: 100%;
+}

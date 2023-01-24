@@ -1,0 +1,11 @@
+.standartButton{
+    border: 2px solid #559f82;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 0px 10px;
+    background-color: #d2d4d8;
+}
+
+.standartButton:active{
+    background-color: #b3b3b3;
+}
