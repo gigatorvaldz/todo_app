@@ -19,12 +19,22 @@
     border-bottom: 1px solid #fff;
 }
 .linklist{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     padding: 10px;
     border-bottom: 1px solid #fff;
 }
 
 .activeLink{
+    text-decoration: none;
+    color: rgb(255, 222, 132);
     border: 1px solid #fff;
+}
+
+.nonActiveLink{
+    text-decoration: none;
+    color: #fff;
 }
 
 .icons{
