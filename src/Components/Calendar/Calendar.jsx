@@ -2,15 +2,18 @@ import * as CalendarAPI from "./Calendar"
 import classnames from 'classnames';
 import "./Calendar.css"
 import StandartButton from "../StandartButton/StandartButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CalendarButton from "./CalendarButton/CalendarButton";
+import { useTranslation } from "react-i18next";
+import "../../Utils/i18next";
 
-function Calendar({selectedDate, setSelectedDate, setSelectedFullDate, selectedFullDate}) {
+function Calendar({ setSelectedDate, setSelectedFullDate, selectedFullDate}) {
 
+    const { t } = useTranslation();
     let defaultProps = {
         date: new Date(),
-        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-        weekDayNames: ['Пн', 'Вт', 'Ср', 'Чт' , 'Пт', 'Сб', 'Вс'],
+        monthNames: [t("calendar.January"), t("calendar.February"), t("calendar.March"), t("calendar.April"), t("calendar.May"), t("calendar.June"), t("calendar.July"), t("calendar.August"), t("calendar.September"), t("calendar.October"), t("calendar.November"), t("calendar.December")],
+        weekDayNames: [t("calendar.Mo"), t("calendar.Tu"), t("calendar.We"), t("calendar.Th"), t("calendar.Fr"), t("calendar.Sa"), t("calendar.Su")],
     };
 
     let currentDate = new Date();
@@ -27,14 +30,15 @@ function Calendar({selectedDate, setSelectedDate, setSelectedFullDate, selectedF
 
     return (
         <div className="CalendarWrapper">
-            {calendarDate.year}
-            <div className="calendarController">
-                <StandartButton onClick={prevYear}>{"<"}</StandartButton>
-                <select onChange={el => setCalendarDate({...calendarDate, month: defaultProps.monthNames.findIndex(i => i === el.target.value)})}>
+            
+            <select className="select" onChange={el => setCalendarDate({...calendarDate, month: defaultProps.monthNames.findIndex(i => i === el.target.value)})}>
                     {
                         defaultProps.monthNames.map( monthName => <option key={monthName}>{monthName}</option>)
                     }
                 </select>
+            <div className="calendarController">
+                <StandartButton onClick={prevYear}>{"<"}</StandartButton>
+                    <p className="yearTitle">{calendarDate.year}</p>
                 <StandartButton onClick={nextYear}>{">"}</StandartButton>
             </div>
             <table>
@@ -52,11 +56,11 @@ function Calendar({selectedDate, setSelectedDate, setSelectedFullDate, selectedF
                                 {week.map((date, index) => date ?
                                     <td
                                     key={index}
-                                    ><CalendarButton onClick={e => {setSelectedDate(e.target.innerText); setSelectedFullDate(date)}} month={calendarDate.month} year={calendarDate.year}><label
-                                    className={classnames('day', {
+                                    ><CalendarButton className={classnames('day', {
                                         'today': CalendarAPI.areEqual(date, currentDate),
                                         'selected': CalendarAPI.areEqual(date, selectedFullDate)
-                                    })}
+                                    })} onClick={e => {setSelectedDate(e.target.innerText); setSelectedFullDate(date)}} month={calendarDate.month} year={calendarDate.year}><label
+                                    
                                     >{date.getDate()}</label></CalendarButton></td>
                                     :
                                     <td key={index} />

@@ -1,0 +1,49 @@
+{
+    "settings": {
+        "changeLanguageOptions": "Выберете язык"
+      },
+    "todo": {
+      "createpost": "Создать пост",
+      "todo": "Нужно сделать",
+      "description": "Описание",
+      "themechoose": "Выберете тему",
+      "create": "Создать",
+      "sort": "Сортировка",
+      "sortchoose": "Выберете сортировку",
+      "search": "Поиск",
+      "createTheme": "Создать Тему",
+      "themeName": "Название темы",
+      "themeColor": "Цвет темы",
+      "nonotes": "Заметок нет",
+      "note": "Заметка",
+      "claim": "Принять",
+      "edit": "Редактировать",
+      "delete": "Удалить",
+      "noposts": "Постов нет",
+      "theme": "Тема",
+      "none": "Не задана",
+      "bodysearch" : "Поиск по описанию",
+      "titlesearch" : "Поиск по заголовку"
+    },
+    "calendar": {
+      "January": "Январь",
+      "February": "Февраль",
+      "March": "Март",
+      "April": "Апрель",
+      "May": "Май",
+      "June": "Июнь",
+      "July": "Июль",
+      "August": "Август",
+      "September": "Сентябрь",
+      "October": "Октябрь",
+      "November": "Ноябрь",
+      "December": "Декабрь",
+      "Mo":"Пн",
+      "Tu":"Вт",
+      "We":"Ср",
+      "Th":"Чт",
+      "Fr":"Пт",
+      "Sa":"Сб",
+      "Su":"Вс"
+    }
+  }

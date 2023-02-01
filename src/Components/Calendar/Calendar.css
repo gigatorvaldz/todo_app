@@ -1,13 +1,39 @@
+.day{
+    color: var(--color-1);
+    border: none;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    font-size: 18px;
+    background-color: var(--background-color-2);
+    padding: 5px;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    margin: 3px;
+    transition: .2s;
+}
+
+.day:active{
+    background-color: var(--background-color-3); 
+}
+
 .today{
-    color: red
+    font-weight: 600;
+    background: rgb(226,110,26);
+    background: linear-gradient(148deg, rgba(226,110,26,1) 0%, rgba(252,174,83,1) 100%);
 }
 
 .selected{
-    color: blue
+    font-weight: 600;
+    background: rgb(153,26,226);
+    background: linear-gradient(148deg, rgba(153,26,226,1) 0%, rgba(108,83,252,1) 100%);
 }
 
 .calendarController{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .CalendarWrapper{
@@ -18,4 +44,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.yearTitle{
+    font-size: 20px;
+    padding: 10px;
 }

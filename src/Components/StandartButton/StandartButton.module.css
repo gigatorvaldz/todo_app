@@ -1,11 +1,12 @@
 .standartButton{
-    border: 2px solid #559f82;
+    border: none;
+    color: var(--color-1);
     font-size: 20px;
-    border-radius: 10px;
     padding: 0px 10px;
-    background-color: #d2d4d8;
+    background: var(--background-interactive-1);
+    transition: .2s;
 }
 
 .standartButton:active{
-    background-color: #b3b3b3;
+    background-color: var(--background-interactive-2);
 }

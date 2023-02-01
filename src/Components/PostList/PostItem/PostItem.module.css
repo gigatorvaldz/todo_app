@@ -1,7 +1,102 @@
-.post{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 3px solid rgb(15, 83, 231);
-    padding: 10px;
+.post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  border: 3px solid var(--background-color-1);
+  border-radius: 15px;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.postInfoComplited {
+  text-decoration: line-through;
+  color: var(--color-2);
+  width: 80%;
+}
+.postInfo {
+  width: 80%;
+}
+
+.dateTitle {
+  margin-top: 2rem;
+  
+  display: flex;
+  align-items: center;
+  color: var(--color-2);
+}
+
+.dateIcon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 15px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 20px;
+  color: var(--color-2);
+}
+
+.themeTitle {
+  color: var(--color-2);
+}
+
+.icon {
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  transition: 0.5s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CheckBox Styling */
+.check {
+  margin-top: 30px;
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  color: #363839;
+  border: 1px solid #6d6d6d;
+  border-radius: 4px;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+}
+.check::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 2px;
+  left: 7px;
+  width: 8px;
+  height: 14px;
+  border-style: solid;
+  border-color: #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+.check:checked {
+  color: #fff;
+  border-color: #06842c;
+  background: #06842c;
+}
+.check:checked::before {
+  opacity: 1;
 }

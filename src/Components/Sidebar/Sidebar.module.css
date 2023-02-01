@@ -1,12 +1,11 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    background-color: #1d1a42;
-    padding: 10px;
+    background-color: #545366;
     height: 100vh;
     position: fixed;
-    width: 300px;
     max-width: 10%;
+    min-width: 7%;
     border-radius: 0 20px 20px 0;
     color: #fff;
     font-size: 26px;
@@ -15,7 +14,8 @@
 }
 
 .menu{
-    padding: 5px;
+    max-width: 100%;
+    padding: 15px;
     border-bottom: 1px solid #fff;
 }
 .linklist{
@@ -39,11 +39,13 @@
 
 .icons{
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: auto;
     padding: 30px;
 }
 
 .icon{
-    max-width: 35%;
-    padding: 3px;
+    cursor: pointer;
+    width: 80%;
 }

@@ -1,12 +1,10 @@
-import './TodolistPage.css'
+import { useTranslation } from "react-i18next";
+import "../Utils/i18next";
 
+function HelpPage() {
+  const { t } = useTranslation();
 
-function TodolistPage() {
-    return (
-        <div className="HelpPageWrapper">
-            Help me
-        </div>
-    );
-  }
+  return <div className="HelpPageWrapper">{t("title")}</div>;
+}
 
-export default TodolistPage;
+export default HelpPage;
