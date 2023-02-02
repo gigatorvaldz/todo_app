@@ -35,14 +35,16 @@
 
 .PostSettings{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    gap: 3%;
+    gap: 10px;
 }
 
 .PostSettings > div {
     flex-grow: 1;
     display: flex;
+
     justify-content: center;
     flex-direction: column;
     align-items: center;

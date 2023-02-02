@@ -11,6 +11,7 @@
     font-size: 26px;
     font-weight: 600;
     text-align: center;
+    padding: 10px;
 }
 
 .menu{
@@ -48,4 +49,12 @@
 .icon{
     cursor: pointer;
     width: 80%;
+}
+
+@media (min-device-width: 568px) and (max-device-width: 1024px)  {
+
+    .sidebar{
+        min-width: 20%;
+    }
+
 }
