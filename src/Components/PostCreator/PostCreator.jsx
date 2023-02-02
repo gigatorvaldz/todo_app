@@ -13,6 +13,9 @@ function PostCreator({ themes, posts, setPosts }) {
     theme: "",
   });
 
+  const [titleDirty, setTitleDirty] = useState(false);
+  const [titleError, setTitleError] = useState(true);
+
   const { t } = useTranslation();
 
   const setTheme = (theme) => {
@@ -35,14 +38,29 @@ function PostCreator({ themes, posts, setPosts }) {
     postCreator.body = "";
   };
 
+  let onChangeHandler = (e) => {
+    setPostCreator({ ...postCreator, title: e.target.value });
+    if (e.target.value) {
+      setTitleError(false);
+    } else setTitleError(true);
+  };
+
+  let onClickHandler = () => {
+    setNewPost();
+    setTitleError(true);
+    setTitleDirty(false);
+  };
+
   return (
     <div className="PostCreator">
       <h1>{t("todo.createpost")}</h1>
+      {titleError && titleDirty && (
+        <p style={{ color: "red" }}>{t("todo.titleerror")}</p>
+      )}
       <StandartInput
+        onBlur={() => setTitleDirty(true)}
         value={postCreator.title}
-        onChange={(e) =>
-          setPostCreator({ ...postCreator, title: e.target.value })
-        }
+        onChange={(e) => onChangeHandler(e)}
         placeholder={t("todo.todo")}
       />
       <StandartInput
@@ -57,7 +75,9 @@ function PostCreator({ themes, posts, setPosts }) {
         onChange={setTheme}
         defaultOptoin={t("todo.themechoose")}
       />
-      <StandartButton onClick={setNewPost}>{t("todo.create")}</StandartButton>
+      <StandartButton disabled={titleError} onClick={onClickHandler}>
+        {t("todo.create")}
+      </StandartButton>
     </div>
   );
 }

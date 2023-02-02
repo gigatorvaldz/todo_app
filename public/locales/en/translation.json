@@ -23,7 +23,8 @@
     "theme": "Theme",
     "none": "None",
     "bodysearch" : "Description search",
-    "titlesearch" : "Title search"
+    "titlesearch" : "Title search",
+    "titleerror": "Title should be correct"
   },
   "calendar": {
     "January" : "January",

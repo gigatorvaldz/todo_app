@@ -10,3 +10,7 @@
 .standartButton:active{
     background-color: var(--background-interactive-2);
 }
+
+.standartButton:disabled{
+    background-color: gray;
+}

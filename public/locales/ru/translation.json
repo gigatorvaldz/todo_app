@@ -23,7 +23,8 @@
       "theme": "Тема",
       "none": "Не задана",
       "bodysearch" : "Поиск по описанию",
-      "titlesearch" : "Поиск по заголовку"
+      "titlesearch" : "Поиск по заголовку",
+      "titleerror": "Название должно быть задано"
     },
     "calendar": {
       "January": "Январь",

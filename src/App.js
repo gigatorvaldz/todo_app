@@ -1,12 +1,12 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import TodolistPage from "./Pages/TodolistPage";
-import Help from "./Pages/HelpPage";
 import { ThemeContext} from "./Context/ThemeContext";
 import { useEffect, useState } from "react";
 import getTheme from "./Utils/getTheme";
 import i18n from "./Utils/i18next";
+import AboutPage from "./Pages/AboutPage";
 
 function App() {
   
@@ -30,8 +30,9 @@ function App() {
         <Sidebar className="sidebar" />
         <div className="mainpage">
           <Routes>
+            <Route path="/" element={<Navigate to="/todolist"/>} />
             <Route path="/todolist/*" element={<TodolistPage />} />
-            <Route path="/help" element={<Help />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </div>
       </div>

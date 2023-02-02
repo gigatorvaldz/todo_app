@@ -7,11 +7,21 @@ import StandartInput from "../StandartInput/StandartInput";
 import ColorPickerButton from "../../Components/ColorPickerButton/ColorPickerButton";
 
 function ThemeCreator({ themes, setThemes }) {
+  const [titleDirty, setTitleDirty] = useState(false);
+  const [titleError, setTitleError] = useState(true);
+
   const { t } = useTranslation();
   const [themeCreator, setThemeCreator] = useState({
     name: "",
     color: { r: 83, g: 83, b: 83, a: 1 },
   });
+
+  let onChangeHandler = (e) => {
+    setThemeCreator({ ...themeCreator, name: e.target.value });
+    if (e.target.value) {
+      setTitleError(false);
+    } else setTitleError(true);
+  };
 
   const setNewTheme = () => {
     setThemes([
@@ -22,23 +32,32 @@ function ThemeCreator({ themes, setThemes }) {
         color: themeCreator.color,
       },
     ]);
+    setThemeCreator({...themeCreator, name: ''})
+  };
+
+  let onClickHandler = () => {
+    setNewTheme();
+    setTitleError(true);
+    setTitleDirty(false);
   };
 
   return (
     <div className="Theme Creator">
       <h1>{t("todo.createTheme")}</h1>
+      {titleError && titleDirty && (
+        <p style={{ color: "red" }}>{t("todo.titleerror")}</p>
+      )}
       <StandartInput
+        onBlur={() => setTitleDirty(true)}
         value={themeCreator.name}
-        onChange={(e) =>
-          setThemeCreator({ ...themeCreator, name: e.target.value })
-        }
+        onChange={onChangeHandler}
         placeholder={t("todo.themeName")}
       />
       <ColorPickerButton
         color={themeCreator.color}
         setColor={(color) => setThemeCreator({ ...themeCreator, color })}
       />
-      <StandartButton onClick={setNewTheme}>{t("todo.create")}</StandartButton>
+      <StandartButton disabled={titleError} onClick={onClickHandler}>{t("todo.create")}</StandartButton>
     </div>
   );
 }
